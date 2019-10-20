@@ -69,7 +69,7 @@ public final class ExoPlayerView extends FrameLayout {
 
         shutterView = new View(getContext());
         shutterView.setLayoutParams(layoutParams);
-        shutterView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.black));
+        shutterView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent));
 
         subtitleLayout = new SubtitleView(context);
         subtitleLayout.setLayoutParams(layoutParams);
@@ -95,6 +95,10 @@ public final class ExoPlayerView extends FrameLayout {
     private void updateSurfaceView() {
         View view = useTextureView ? new TextureView(context) : new SurfaceView(context);
         view.setLayoutParams(layoutParams);
+
+        if (useTextureView) {
+            view.setAlpha(0.99f);
+        }
 
         surfaceView = view;
         if (layout.getChildAt(0) != null) {
