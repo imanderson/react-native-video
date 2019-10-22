@@ -46,7 +46,6 @@
         "test": "node_modules/.bin/eslint *.js"
     },
     "files": [
-        "android-exoplayer",
         "android",
         "dom",
         "ios",
